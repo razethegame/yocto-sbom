@@ -1,0 +1,14 @@
+# Development dependencies for yocto-sbom
+# Install with: pip install -r requirements-dev.txt
+
+# Testing
+pytest>=7.0.0
+
+# Build and publish
+build>=0.10.0
+twine>=4.0.0
+
+# Code quality (optional)
+# black>=22.0.0
+# flake8>=4.0.0
+# mypy>=0.950

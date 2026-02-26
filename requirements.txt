@@ -1,0 +1,5 @@
+# yocto-sbom has ZERO runtime dependencies
+# It uses only Python 3.8+ standard library
+
+# This file is intentionally empty to make this explicit
+# For development dependencies, see requirements-dev.txt
