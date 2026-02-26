@@ -1,6 +1,6 @@
 # yocto-sbom
 
-[![Tests](https://github.com/complira/yocto-sbom/actions/workflows/tests.yml/badge.svg)](https://github.com/complira/yocto-sbom/actions/workflows/tests.yml)
+[![Tests](https://github.com/complira/yocto-sbom/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/complira/yocto-sbom/actions/workflows/tests.yml)
 [![PyPI version](https://img.shields.io/pypi/v/yocto-sbom)](https://pypi.org/project/yocto-sbom/)
 [![Python versions](https://img.shields.io/pypi/pyversions/yocto-sbom)](https://pypi.org/project/yocto-sbom/)
 [![License](https://img.shields.io/pypi/l/yocto-sbom)](https://github.com/complira/yocto-sbom/blob/main/LICENSE)
