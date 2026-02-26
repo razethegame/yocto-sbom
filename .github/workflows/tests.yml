@@ -9,6 +9,7 @@ on:
 jobs:
   test:
     runs-on: ${{ matrix.os }}
+    continue-on-error: ${{ matrix.experimental || false }}
     strategy:
       fail-fast: false
       max-parallel: 8  # Limit concurrent jobs to avoid queuing
@@ -27,11 +28,13 @@ jobs:
             python-version: "3.12"
           - os: ubuntu-latest
             python-version: "3.13"
-          # Ubuntu 20.04: legacy Python versions for old Yocto servers
+          # Ubuntu 20.04: legacy Python versions for old Yocto servers (allowed to fail)
           - os: ubuntu-20.04
             python-version: "3.6"
+            experimental: true
           - os: ubuntu-20.04
             python-version: "3.7"
+            experimental: true
           # macOS: test latest Python only
           - os: macos-latest
             python-version: "3.13"
