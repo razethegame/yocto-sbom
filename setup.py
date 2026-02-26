@@ -7,7 +7,6 @@ setup(
     description="Generate SPDX 2.3 and CycloneDX 1.5 SBOMs for pre-Kirkstone Yocto/PetaLinux projects",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    license="Apache-2.0",
     python_requires=">=3.6",
     packages=find_packages(),
     entry_points={
