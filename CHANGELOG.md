@@ -7,12 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
 ### Changed
-### Deprecated
-### Removed
+- **BREAKING**: Minimum Python version raised from 3.6 to 3.8
+- Removed Python 3.6 and 3.7 from CI testing due to GitHub runner availability
+
+### Added
+- CHANGELOG.md following Keep a Changelog format
+
 ### Fixed
-### Security
+- Optimized CI workflow to prevent runner queuing issues
 
 ## [0.1.0] - 2026-02-26
 

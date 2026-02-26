@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Generate SPDX 2.3 and CycloneDX 1.5 SBOMs for pre-Kirkstone Yocto/PetaLinux projects"
 readme = "README.md"
 license = {text = "Apache-2.0"}
-requires-python = ">=3.6"
+requires-python = ">=3.8"
 authors = [
     {name = "yocto-sbom contributors"},
 ]
@@ -18,8 +18,6 @@ classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",

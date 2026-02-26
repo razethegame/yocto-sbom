@@ -23,8 +23,8 @@ Yocto added native SPDX support in Kirkstone (4.0, April 2022), and `meta-cyclon
 - Yocto license normalization (GPLv2 -> GPL-2.0-only, etc.)
 - CPE 2.3 and PURL generation for vulnerability correlation
 - Built-in SBOM validation
-- **Zero dependencies** — Python 3.6+ stdlib only (no pip packages required)
-- Supports Python 3.6, 3.7, 3.8, 3.9, 3.10, 3.11, 3.12, 3.13
+- **Zero dependencies** — Python 3.8+ stdlib only (no pip packages required)
+- Supports Python 3.8, 3.9, 3.10, 3.11, 3.12, 3.13
 
 ## Quick Start
 
