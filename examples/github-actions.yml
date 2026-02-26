@@ -1,0 +1,49 @@
+# .github/workflows/sbom.yml
+name: Generate SBOM
+
+on:
+  release:
+    types: [published]
+  # Optional: also on push for testing
+  # push:
+  #   branches: [main]
+
+jobs:
+  sbom:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Install yocto-sbom
+        run: pip install yocto-sbom
+
+      - name: Generate SBOM
+        run: |
+          VERSION="${GITHUB_REF_NAME:-dev-${GITHUB_SHA::8}}"
+          yocto-sbom \
+            --config yocto-sbom.conf \
+            --version "$VERSION" \
+            --validate
+
+      - name: Upload SBOM artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom
+          path: |
+            sbom-spdx.json
+            sbom-cdx.json
+
+      # Optional: attach SBOMs to GitHub release
+      - name: Attach to release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            sbom-spdx.json
+            sbom-cdx.json

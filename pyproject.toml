@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yocto-sbom"
+version = "0.1.0"
+description = "Generate SPDX 2.3 and CycloneDX 1.5 SBOMs for pre-Kirkstone Yocto/PetaLinux projects"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.6"
+authors = [
+    {name = "yocto-sbom contributors"},
+]
+keywords = ["yocto", "sbom", "spdx", "cyclonedx", "firmware", "bitbake"]
+dependencies = []
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Security",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+yocto-sbom = "yocto_sbom.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/yocto-sbom/yocto-sbom"
+Issues = "https://github.com/yocto-sbom/yocto-sbom/issues"

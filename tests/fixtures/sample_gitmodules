@@ -1,0 +1,7 @@
+[submodule "libs/libfoo"]
+	path = libs/libfoo
+	url = https://gitlab.com/example/libfoo.git
+
+[submodule "libs/libbar"]
+	path = libs/libbar
+	url = https://deploy-token:secret@gitlab.com/example/libbar.git
