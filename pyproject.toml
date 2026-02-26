@@ -36,5 +36,5 @@ classifiers = [
 yocto-sbom = "yocto_sbom.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/yocto-sbom/yocto-sbom"
-Issues = "https://github.com/yocto-sbom/yocto-sbom/issues"
+Homepage = "https://github.com/complira/yocto-sbom"
+Issues = "https://github.com/complira/yocto-sbom/issues"

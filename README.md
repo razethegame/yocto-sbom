@@ -1,9 +1,10 @@
 # yocto-sbom
 
-[![Tests](https://github.com/yocto-sbom/yocto-sbom/actions/workflows/tests.yml/badge.svg)](https://github.com/yocto-sbom/yocto-sbom/actions/workflows/tests.yml)
+[![Tests](https://github.com/complira/yocto-sbom/actions/workflows/tests.yml/badge.svg)](https://github.com/complira/yocto-sbom/actions/workflows/tests.yml)
 [![PyPI version](https://img.shields.io/pypi/v/yocto-sbom)](https://pypi.org/project/yocto-sbom/)
 [![Python versions](https://img.shields.io/pypi/pyversions/yocto-sbom)](https://pypi.org/project/yocto-sbom/)
-[![License](https://img.shields.io/pypi/l/yocto-sbom)](https://github.com/yocto-sbom/yocto-sbom/blob/main/LICENSE)
+[![License](https://img.shields.io/pypi/l/yocto-sbom)](https://github.com/complira/yocto-sbom/blob/main/LICENSE)
+[![Downloads](https://img.shields.io/pypi/dm/yocto-sbom)](https://pypi.org/project/yocto-sbom/)
 
 Generate SPDX 2.3 and CycloneDX 1.5 SBOMs for pre-Kirkstone Yocto/PetaLinux firmware projects.
 
@@ -116,7 +117,7 @@ See `examples/gitlab-ci.yml` and `examples/github-actions.yml` for ready-to-use 
 ## Development
 
 ```bash
-git clone https://github.com/yocto-sbom/yocto-sbom.git
+git clone https://github.com/complira/yocto-sbom.git
 cd yocto-sbom
 pip install -e .
 python -m pytest tests/
