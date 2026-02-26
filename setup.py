@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="yocto-sbom",
-    version="0.1.0",
+    version="0.2.0",
     description="Generate SPDX 2.3 and CycloneDX 1.5 SBOMs for pre-Kirkstone Yocto/PetaLinux projects",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",

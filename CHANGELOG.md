@@ -7,15 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-02-26
+
 ### Changed
 - **BREAKING**: Minimum Python version raised from 3.6 to 3.8
 - Removed Python 3.6 and 3.7 from CI testing due to GitHub runner availability
+- Optimized CI workflow to prevent runner queuing issues
 
 ### Added
 - CHANGELOG.md following Keep a Changelog format
 
 ### Fixed
-- Optimized CI workflow to prevent runner queuing issues
+- Fixed pyproject.toml license format for PEP 621 compliance
+- Fixed GitHub Actions badge caching issues
 
 ## [0.1.0] - 2026-02-26
 
@@ -45,5 +49,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Development setup instructions
 - Publishing guide for PyPI
 
-[Unreleased]: https://github.com/complira/yocto-sbom/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/complira/yocto-sbom/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/complira/yocto-sbom/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/complira/yocto-sbom/releases/tag/v0.1.0
